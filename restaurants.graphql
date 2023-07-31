@@ -1,0 +1,32 @@
+query getrestaurants(){
+  restaurants{
+    name
+    description
+    dishes
+  }
+  restaurant(id:$idd){
+    name
+    description
+  }
+}
+
+mutation setrestaurants{
+  setrestaurant(input:{name:"Granite", description:"European"}){
+    name
+    description
+  }
+}
+
+mutation editrestaurants($idd:Int=1, $name:String="Fiorellas"){
+
+  editrestaurant(id:$idd, name:$name){
+    name
+    description
+  }
+}
+
+mutation deleterestaurants($idd:Int=1){
+  deleterestaurant(id:$idd){
+    ok
+  }
+}
